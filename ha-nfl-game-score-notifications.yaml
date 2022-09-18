@@ -1,6 +1,6 @@
 blueprint:
   domain: automation
-  name: NFL Game Score
+  name: NFL Game Score Notification
   description: >
     Designed for Home Assistant mobile app notifications.  Will send a notification with NFL game information, triggered by any score change, optionally ignoring opponent scores. 
     
