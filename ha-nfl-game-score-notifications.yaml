@@ -63,7 +63,7 @@ action:
   - repeat:
       for_each: "{{ notify_targets }}"
       sequence:
-        - service: 'notify.mobile_app_{{ device_attr(repeat.item, "name") | replace("’","") | replace(" ","_") | lower }}'
+        - service: 'notify.mobile_app_{{ device_attr(repeat.item, "name") | slugify }}'
           data:
             title: >-
               {{ state_attr(trigger.entity_id, "team_name") }} / {{
