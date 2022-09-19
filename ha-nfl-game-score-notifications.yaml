@@ -56,9 +56,9 @@ trigger:
     id: POST
 condition:
   - condition: template
-    value_template: '{{ (states(trigger.entity_id) in [ "IN" ] or trigger.to_state.state == "POST" ) }}'
+    value_template: '{{ (states(trigger.entity_id) in [ "IN" ]) or (trigger.to_state.state == "POST") }}'
   - condition: template
-    value_template: '{{ ( trigger.id != "oppo_score") or (notify_on_opponent_score=="Yes" ) }}'
+    value_template: '{{ (trigger.id != "oppo_score") or (notify_on_opponent_score=="Yes") }}'
 action:
   - repeat:
       for_each: "{{ notify_targets }}"
